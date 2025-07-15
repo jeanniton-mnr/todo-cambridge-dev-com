@@ -1,0 +1,211 @@
+* {
+  font-family: sans-serif;
+  line-height: 14pt;
+  font-size: 14pt;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* This code removed the glow effect on some browser */
+textarea,
+select,
+input,
+button {
+  -webkit-appearance: none;
+  outline: none !important;
+}
+
+textarea:focus,
+select:focus,
+input:focus,
+button:focus {
+  -webkit-appearance: none;
+  outline: none !important;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  width: 520px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.component {
+  background-color: #e9e9e9;
+  padding: 9pt 12pt;
+  border-radius: 3pt;
+  overflow: hidden;
+  display: flex;
+}
+
+.h-padding {
+  padding-left: 3pt;
+  padding-right: 3pt;
+}
+.spacer-1 {
+  width: 100%;
+  height: calc(12pt * 1);
+}
+.spacer-2 {
+  width: 100%;
+  height: calc(12pt * 2);
+}
+.spacer-3 {
+  width: 100%;
+  height: calc(12pt * 3);
+}
+
+.centered {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 3pt;
+}
+.title > * {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.title-text {
+  font-size: 1.6rem;
+}
+
+.title-icon {
+  width: 24pt;
+  height: 24pt;
+}
+
+.title-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.entry-form {
+  position: relative;
+  overflow: visible;
+
+  padding-left: 12pt;
+  padding-right: 12pt;
+  padding-top: 14pt;
+  padding-bottom: 14pt;
+
+  /* calc((line-height + padding-top + padding-bottom) / 2) */
+  border-radius: calc((14pt + (14pt * 2)) / 2);
+}
+.entry-form-input {
+  position: relative;
+  padding-left: 6pt;
+  /* TODO: Calculate the correct value for the right padding */
+  padding-right: calc(14pt + 14pt * 2);
+}
+.entry-form-button {
+  position: absolute;
+
+  /* display: inline-block; */
+
+  /* calc(line-height + padding-top + padding-bottom) */
+  width: calc(14pt + (14pt * 2));
+  height: calc(14pt + (14pt * 2));
+
+  /* calc((line-height + padding-top + padding-bottom) / 2) */
+  border-radius: calc((14pt + (14pt * 2)) / 2);
+
+  right: 0;
+
+  align-self: anchor-center;
+
+  font-size: 3rem;
+  font-weight: bolder;
+  color: #000000;
+  cursor: pointer;
+
+  background-color: #30cc32;
+}
+
+.toast span {
+  color: #30cc32;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.todo-list-item {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.todo-list-item.active {
+  background-color: #63ffae;
+}
+
+.todo-list-item input.deleted {
+  text-overflow: clip;
+  text-decoration: line-through;
+}
+
+@media only screen and (max-width: 600px) {
+  * {
+    font-size: 9pt;
+    line-height: 9pt;
+  }
+
+  input {
+    width: 240px;
+  }
+
+  .spacer-1 {
+    width: 100%;
+    height: calc(12pt * 1 / 2);
+  }
+  .spacer-2 {
+    width: 100%;
+    height: calc(12pt * 2 / 2);
+  }
+  .spacer-3 {
+    width: 100%;
+    height: calc(12pt * 3 / 2);
+  }
+
+  .component {
+    padding: calc(9pt / 2) calc(12pt / 2);
+  }
+
+  .entry-form {
+    padding-top: 14pt;
+    padding-bottom: 14pt;
+
+    /* calc((line-height + padding-top + padding-bottom) / 2) */
+    border-radius: calc((9pt + (14pt * 2)) / 2);
+  }
+
+  .entry-form-input {
+    /* TODO: Calculate the correct value for the right padding */
+    padding-right: calc(9pt + 14pt * 2);
+  }
+
+  .entry-form-button {
+    /* calc(line-height + padding-top + padding-bottom) */
+    width: calc(9pt + (14pt * 2));
+    height: calc(9pt + (14pt * 2));
+  }
+}
+
+@media only screen and (min-width: 600px) {
+}
