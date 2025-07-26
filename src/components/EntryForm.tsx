@@ -12,7 +12,9 @@ const EntryForm = ({ onSubmit, ...props }: Props) => {
   const [isToast, setIsToast] = React.useState<boolean>(false);
 
   // Update the event to the parent component / HOC
-  const _onSubmit = () => {
+  const _onSubmit = (e) => {
+    // Prevent the page from reloading
+    e?.preventDefault();
     // If there is empty value / string, do nothing
     if (!value?.length) {
       return;
